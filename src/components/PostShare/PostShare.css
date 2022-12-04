@@ -27,7 +27,8 @@
 }
 .postOptions{
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
+   
 }
 .option{
     padding: 5px;

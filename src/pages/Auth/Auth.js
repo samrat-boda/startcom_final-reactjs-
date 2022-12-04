@@ -1,13 +1,17 @@
 import React, { useState, useContext } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { logIn, signUp } from "../../actions/authAction.js";
 import { Home } from "../../pages/home/Home";
 import "./Auth.css";
-// import { store } from "../../App";
+// import store from "../../store/ReduxStore.js";
 const Auth = () => {
   const navigate = useNavigate();
-  // const { users, setUsers } = useContext(store);
+  const loading=useSelector((state)=>state.authReducer.loading)
+  // console.log(store.AuthReducer.loading)
+  console.log(loading)
   const [isSignup, setIsSignup] = useState(true);
+  const dispatch=useDispatch()
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
@@ -29,6 +33,12 @@ const Auth = () => {
       if (data.password !== data.confirmpassword) {
         setConfirmPass(false);
       }
+      else{
+        dispatch(signUp(data))
+      }
+    }
+    else{
+      dispatch(logIn(data))
     }
 
     const passPattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
@@ -74,7 +84,7 @@ const Auth = () => {
       return;
     }
 
-    navigate("/home");
+    // navigate("/home");
   };
   const resForm = () => {
     setConfirmPass(true);
@@ -188,7 +198,7 @@ const Auth = () => {
           </div>
 
           <button className="button-signup" type="submit">
-            {isSignup ? "Signup" : "Log In"}
+            {loading?"Loading...":  isSignup ? "Signup" : "Log In"}
           </button>
         </form>
       </div>

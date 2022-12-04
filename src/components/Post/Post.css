@@ -21,4 +21,17 @@
     display: flex;
     flex-direction: row;
     gap:0.5rem;
+    font-weight: bold   ;
+}
+.comments{
+    display: flex;
+    flex-direction: column;
+}
+.comments>input{
+    border-radius: 10px;
+    max-width: 90%;
+    padding: 20px;
+    height: 25px;
+    background-color: var(--inputColor)
+    
 }
