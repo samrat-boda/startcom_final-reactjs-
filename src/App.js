@@ -24,12 +24,35 @@ function App() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/profile' element={<ProfilePage/>}></Route>
         <Route path='/chat' element={<Chat/>}></Route> */}
+{/* 
         <Route path='/' element={<LandingPage/>}></Route>
-        <Route path='/home' element={user?<Home/>:<Auth/> }></Route>
+        <Route path='/home' element={user?<Home/>:<Auth/> }></Route> */}
+
         {/* <Route path='/auth' element={user?<Navigate to ="../home"/>:<Auth/> }></Route> */}
-        <Route path='/auth' element={user?<Home/>:<Auth/> }></Route>
-        <Route path='/profile' element={<ProfilePage/>}></Route>
-        <Route path='/chat' element={<Chat/>}></Route> 
+
+        {/* <Route path='/auth' element={user?<Home/>:<Auth/> }></Route>
+        <Route
+          path="/profile/:id"
+          element={user ? <ProfilePage /> : <Auth/>}
+        />
+        <Route path='/chat' element={<Chat/>}></Route>  */}
+
+<Route
+          path="/"
+          element={user ? <Navigate to="home" /> : <Navigate to="auth" />}
+        />
+        <Route
+          path="/home"
+          element={user ? <Home /> : <Navigate to="../auth" />}
+        />
+        <Route
+          path="/auth"
+          element={user ? <Navigate to="../home" /> : <Auth />}
+        />
+        <Route
+          path="/profile/:id"
+          element={user ? <ProfilePage/> : <Navigate to="../auth" />}
+        />
       </Routes>
 
       

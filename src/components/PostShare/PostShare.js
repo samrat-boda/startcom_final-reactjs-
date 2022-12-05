@@ -7,14 +7,16 @@ import {UilTimes} from "@iconscout/react-unicons"
 import {v4 as uuidv4} from 'uuid'; 
 import { PostsData } from '../../Data/PostsData'
 import { useDispatch, useSelector } from 'react-redux'
-import { uploadImage } from '../../actions/uploadAction'
+import { uploadImage, uploadPost } from '../../actions/uploadAction'
 
 // import postPic3 from '../../images/bb.png'
 
 const PostShare = () => {
+  const loading=useSelector((state)=>state.postReducer.uploading)
   const[image,setImage]=useState();
   const dispatch =useDispatch();
   const {user}=useSelector((state)=>state.authReducer.authData)
+  const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
   const[postData,setPostData]=useState({
     img:"",
     desc:"",
@@ -22,6 +24,10 @@ const PostShare = () => {
     likes:200,
     id:uuidv4(),
   })
+  const reset=()=>{
+    setImage(null)
+    desc.current.value=""
+  }
   const imageRef=useRef();
   const desc=useRef();
   const onImageChange=(event)=>{
@@ -48,7 +54,9 @@ const PostShare = () => {
     data.append("name",filename)
     data.append("file",image)
     newPost.image=filename
+    console.log("..........")
     console.log(newPost)
+    console.log("..........")
     try {
       dispatch(uploadImage(data))
     } catch (error) {
@@ -61,10 +69,12 @@ const PostShare = () => {
     
     // setImage('')
     // postData.desc=''
+    dispatch(uploadPost(newPost))
+    reset();
   }
   return (
     <div className='PostShare'>
-        <img src={Profile} alt=""/>    
+        <img src={user.coverPicture?serverPublic+user.coverPicture:serverPublic+"defaultProfile.png"} alt=""/>    
         <div>
         <input type="text"  ref={desc} required name="desc" placeholder="What's in ur Mind" onChange={textHandler} /> 
        
@@ -74,7 +84,7 @@ const PostShare = () => {
             <UilScenery/>
             Photo
             </div>
-            <button className='button-post' onClick={addPostHandler}>Share</button>
+            <button className='button-post' onClick={addPostHandler} disabled={loading}>{loading?"Uploading...":"share"}</button>
             <div style={{display:'none'}}>
               <input type='file' name='img' ref={imageRef} onChange={onImageChange}/>
             </div>

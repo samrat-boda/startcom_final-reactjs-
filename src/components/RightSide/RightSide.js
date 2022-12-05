@@ -22,7 +22,7 @@ const RightSide = () => {
             </div>
         </div>
         <TrendCard/>
-        {<button className='button-rside' onClick={()=>{navigate('/')}}>LOGOUT</button>}
+        {/* {<button className='button-rside' onClick={()=>{navigate('/')}}>LOGOUT</button>} */}
        
 
     </div>
