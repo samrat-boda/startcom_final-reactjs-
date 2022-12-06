@@ -53,6 +53,10 @@ function App() {
           path="/profile/:id"
           element={user ? <ProfilePage/> : <Navigate to="../auth" />}
         />
+         <Route
+          path="/chat"
+          element={user ? <Chat /> : <Navigate to="../auth" />}
+        />
       </Routes>
 
       

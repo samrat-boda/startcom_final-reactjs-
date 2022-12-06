@@ -24,7 +24,7 @@ const FollowersCard = () => {
     <div  className="FollowersCard">
       
         {
-            persons.map((person,id)=>{
+            persons.map((person,id) => {
                 if(person._id!==user._id){
 
                 

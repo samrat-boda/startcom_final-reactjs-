@@ -44,7 +44,7 @@ export const getUser=async(req,res)=>{
 //Update User
 export const updateUser = async (req, res) => {
     const id = req.params.id;
-    // console.log("Data Received", req.body)
+    console.log("Data Received", req.body)
     const { _id, currentUserAdmin, password } = req.body;
     
     if (id === _id) {
@@ -100,7 +100,8 @@ export const deleteUser=async(req,res)=>{
 export const followUser = async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
-  console.log(id, _id)
+  // console.log(_id)
+  
   if (_id == id) {
     res.status(403).json("Action Forbidden");
   } else {
@@ -128,7 +129,7 @@ export const unfollowUser = async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
 
-  if(_id === id)
+  if(_id == id)
   {
     res.status(403).json("Action Forbidden")
   }

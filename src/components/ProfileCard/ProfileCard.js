@@ -13,7 +13,6 @@ const ProfileCard = () => {
   const {user} =useSelector( (state)=>state.authReducer.authData)
   console.log(user)
   const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
-
   const ProfilePage=false;
   return (
     <div className='ProfileCard'>
@@ -47,10 +46,6 @@ const ProfileCard = () => {
           {ProfilePage&&(
             <>
             <div className="vl" style={{height: '100%',width: 1,backgroundColor: '#909090'}}>            
-            </div>
-            <div className='follow'>
-              <span>3</span>
-              <span>Posts</span>
             </div>
             </>
           )}

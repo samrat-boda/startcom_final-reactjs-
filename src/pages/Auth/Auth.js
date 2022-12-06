@@ -9,7 +9,7 @@ const Auth = () => {
   const navigate = useNavigate();
   const loading=useSelector((state)=>state.authReducer.loading)
   // console.log(store.AuthReducer.loading)
-  console.log(loading)
+  // console.log(loading)
   const [isSignup, setIsSignup] = useState(true);
   const dispatch=useDispatch()
   const [data, setData] = useState({

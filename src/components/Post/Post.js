@@ -37,9 +37,9 @@ const Post = ({data}) => {
         <div className='li' onClick={()=>likehandler()}>
         {liked?<BsHeartFill style={{color:'green',height:'30px',width:'30px'}}/>:<BsHeart style={{color:'green',height:'30px',width:'30px'}}/>}
         </div> 
-    <FaCommentDots style={{color:'green',height:'30px',width:'30px'}} onClick={commenthandler}/>   
+    {/* <FaCommentDots style={{color:'green',height:'30px',width:'30px'}} onClick={commenthandler}/>   
     <CommentModal modalOpened={modalOpened} setModalOpened={setModalOpened}></CommentModal> 
-    <FaShare style={{color:'green',height:'30px',width:'30px'}}/>
+    <FaShare style={{color:'green',height:'30px',width:'30px'}}/> */}
     </div>
     <span style={{fontSize:'12px'}}>{likes} Likes</span>
     {com&& 
