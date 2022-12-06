@@ -7,6 +7,7 @@ export const updateUser=(id, formData)=> async(dispatch)=> {
         // console.log("in cactio")
         // console.log(id)
         // console.log(formData)
+        console.log(formData)
         const {data} = await UserApi.updateUser(id, formData);
         // console.log(data)
         // console.log(data)

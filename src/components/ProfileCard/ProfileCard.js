@@ -11,6 +11,7 @@ const ProfileCard = () => {
   // const { users} =useContext(store);
   // console.log(users.username)
   const {user} =useSelector( (state)=>state.authReducer.authData)
+  console.log(user)
   const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
 
   const ProfilePage=false;

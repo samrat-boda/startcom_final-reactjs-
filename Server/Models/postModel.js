@@ -5,6 +5,7 @@ const postSchema=mongoose.Schema({
         type:String,
         required:true,
     },
+    username:String,
     desc:String,
     likes:[],
     image:String,

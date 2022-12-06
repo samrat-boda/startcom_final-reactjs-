@@ -14,7 +14,7 @@ export const uploadPost = (formData) => async (dispatch) => {
   try {
     // const newPost =await UploadApi.uploadPost(formData);
     const {data}=await UploadApi.uploadPost(formData);
-    console.log(data)
+    // console.log(data)
     dispatch({ type: "UPLOAD_SUCCESS", data: data });
   } catch (error) {
     console.log(error);

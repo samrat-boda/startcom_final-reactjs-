@@ -55,7 +55,7 @@ const Post = ({data}) => {
         </div>
        }
     <div className='detail'>
-        {/* <span><b>{data.name}</b></span> */}
+        <span><b>{data.username}</b></span>
         <span>{data.desc}</span>
     </div>
    </div>

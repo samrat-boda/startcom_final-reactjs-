@@ -34,6 +34,7 @@ const InfoCard = () => {
         fetchProfileUser();
     }, [profileUser, profileUserId, user])
     // console.log(user)
+    // console.log(profileUser)
     // const { pd } =useContext(store);
     // console.log(pd)
     // const[isPenClick,setisPenClick]=useState(false);

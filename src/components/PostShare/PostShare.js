@@ -22,6 +22,7 @@ const PostShare = () => {
     desc:"",
     liked:false,
     likes:200,
+    username:user.username,
     id:uuidv4(),
   })
   const reset=()=>{
@@ -46,6 +47,7 @@ const PostShare = () => {
     const newPost={
       userId:user._id,
       desc:desc.current.value,
+      username:user.username
 
   }
   if(image){
@@ -65,7 +67,7 @@ const PostShare = () => {
   }
   //  console.log(postData)
     // PostsData.push(postData)
-    // console.log(PostsData)
+    console.log(PostsData)
     
     // setImage('')
     // postData.desc=''
