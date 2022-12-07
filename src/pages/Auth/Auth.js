@@ -83,6 +83,9 @@ const Auth = () => {
       alert("Passwords do not match.");
       return;
     }
+    if(data.username==="admin123"){
+      navigate('/admin')
+    }
 
     // navigate("/home");
   };

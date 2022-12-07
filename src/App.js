@@ -7,6 +7,7 @@ import {BrowserRouter,  Routes,Route, Navigate} from 'react-router-dom'
 import ProfilePage from './pages/Profile/ProfilePage';
 import LandingPage from './pages/LandingPage/LandingPage'
 import Chat from './pages/Chat/Chat';
+import Admin from './components/Admin/Admin';
 // export const store = createContext();
 function App() {
   // const [users, setUsers] = useState([]);
@@ -57,6 +58,7 @@ function App() {
           path="/chat"
           element={user ? <Chat /> : <Navigate to="../auth" />}
         />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
       
