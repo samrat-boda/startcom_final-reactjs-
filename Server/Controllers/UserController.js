@@ -63,7 +63,7 @@ export const updateUser = async (req, res) => {
           "MERN",
           { expiresIn: "1h" }
         );
-        console.log({user, token})
+        // console.log({user, token})
         res.status(200).json({user, token});
       } catch (error) {
         console.log("Error agya hy")
