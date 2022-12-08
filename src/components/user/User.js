@@ -13,6 +13,7 @@ const User = ({person}) => {
     );
     const [check,setcheck]=useState(false)
     // console.log(person.followers.includes(user._id))
+    console.log(person)
     const handleFollow = (e) => {
       following
         ? dispatch(unfollowUser(person._id, user))

@@ -37,7 +37,7 @@ const ProfileCard = () => {
   )
   
   
-  const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER;
   const ProfilePage=false;
   return (
     <div className='ProfileCard'>

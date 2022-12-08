@@ -38,6 +38,8 @@ const Post = ({data}) => {
         // setModalOpened(true)
         setcom(!com)
     }
+    console.log(data)
+    
   return (
    <div className='Post'>
     <img src={data.image?process.env.REACT_APP_PUBLIC_FOLDER+data.image:""} alt=""/>
